@@ -1,0 +1,7 @@
+{
+  "name": "myAnimesMandy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
