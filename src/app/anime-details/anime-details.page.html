@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ anime.title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="editAnime()">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" (click)="confirmDelete()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img [alt]="anime.title" [src]="anime.imageUrl" />
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ anime.title }}</ion-card-title>
+      <ion-card-subtitle>Nota: {{ anime.rating }}/10</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{ anime.description }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-textarea
+      placeholder="Digite o que achou desse anime"
+      [autoGrow]="true"
+      [(ngModel)]="newComment"
+      (keyup.enter)="addComment()"
+    ></ion-textarea>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let comment of comments">
+      <ion-textarea
+        [value]="comment"
+        readonly="true"
+        [autoGrow]="true"
+      ></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Anime</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">Cancelar</ion-button>
+      <ion-button (click)="save()">Salvar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Título</ion-label>
+    <ion-input [(ngModel)]="anime.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nota</ion-label>
+    <ion-input [(ngModel)]="anime.rating" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Descrição</ion-label>
+    <ion-textarea [(ngModel)]="anime.description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">URL da Imagem</ion-label>
+    <ion-input [(ngModel)]="anime.imageUrl"></ion-input>
+  </ion-item>
+</ion-content>
